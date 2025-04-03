@@ -425,6 +425,13 @@ body {
   background-color: var(--bg-secondary);
   position: relative;
   overflow: hidden;
+  width: 100%;
+}
+
+.produtos .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2rem;
 }
 
 .produtos h2 {
@@ -435,9 +442,9 @@ body {
 
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
-  margin-bottom: 4rem;
+  width: 100%;
 }
 
 .produto-card {
@@ -1723,179 +1730,112 @@ footer::before {
 
 /* Seção Especialistas */
 .especialistas {
-  padding: 8rem 0;
-  background: var(--bg-secondary);
-  position: relative;
-  overflow: hidden;
-}
-
-.especialistas h2 {
-  font-size: 3.5rem;
-  text-align: center;
-  margin-bottom: 4rem;
-  background: linear-gradient(
-    135deg,
-    var(--text-primary) 0%,
-    var(--color-blue) 100%
+  padding: 80px 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(0, 0, 0, 0) 70%
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-.especialistas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  padding: 0 2rem;
-}
-
-.especialista-card {
-  background: var(--card-bg);
-  border-radius: 2rem;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--card-shadow);
-}
-
-.especialista-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: var(--color-blue);
+.especialista-principal {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .especialista-imagem {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin: 0 auto 2rem;
-  overflow: hidden;
-  border: 3px solid var(--color-blue);
+  flex: 0 0 300px;
 }
 
 .especialista-imagem img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.especialista-imagem img:hover {
+  transform: scale(1.02);
+}
+
+.especialista-info {
+  flex: 1;
 }
 
 .especialista-info h3 {
-  font-size: 1.8rem;
-  color: var(--color-blue);
-  margin-bottom: 1rem;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: var(--text-color);
 }
 
-.especialista-info p {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
+.cargo {
+  display: block;
+  font-size: 1.2em;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+}
+
+.historia {
+  margin-bottom: 30px;
+}
+
+.historia p {
+  margin-bottom: 15px;
   line-height: 1.6;
+  color: var(--text-color);
 }
 
-/* Ajustes de responsividade */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 4rem;
-    left: 0;
-    right: 0;
-    background: var(--navbar-bg);
-    padding: 2rem;
+.conquistas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.conquista-item {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.conquista-item:hover {
+  transform: translateY(-5px);
+}
+
+.conquista-item i {
+  font-size: 2em;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.conquista-item span {
+  display: block;
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+@media (max-width: 968px) {
+  .especialista-principal {
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    border-bottom: 1px solid var(--card-border);
-    box-shadow: var(--card-shadow);
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 6rem 1rem 2rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-image {
-    height: 300px;
-    margin: 2rem auto;
-    background-position: center;
-  }
-
-  .especialistas h2 {
-    font-size: 2.5rem;
-    padding: 0 1rem;
-  }
-
-  .especialistas-grid {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-    gap: 2rem;
-  }
-
-  .especialista-card {
-    padding: 1.5rem;
+    padding: 20px;
   }
 
   .especialista-imagem {
-    width: 150px;
-    height: 150px;
+    flex: 0 0 auto;
+    max-width: 250px;
+    margin: 0 auto;
   }
 
-  .especialista-info h3 {
-    font-size: 1.5rem;
-  }
-
-  .sobre-content {
+  .conquistas {
     grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .sobre-texto h2 {
-    font-size: 2.5rem;
-  }
-
-  .sobre-imagem {
-    min-height: 300px;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .especialistas h2 {
-    font-size: 2rem;
-  }
-
-  .especialista-card {
-    margin: 0 1rem;
-  }
-
-  .container {
-    padding: 0 1rem;
   }
 }
 
@@ -2232,5 +2172,34 @@ footer::before {
     width: 45px;
     height: 45px;
     font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1600px) {
+  .produtos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1280px) {
+  .produtos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .produtos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .produtos-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .produto-card {
+    max-width: 100%;
   }
 }
