@@ -2560,3 +2560,204 @@ footer::before {
     height: 250px;
   }
 }
+
+/* Seção Garantia */
+.garantia {
+  padding: 100px 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.97),
+    rgba(15, 15, 15, 0.97)
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.garantia::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("assets/images/pattern.png") repeat;
+  opacity: 0.03;
+  z-index: 1;
+}
+
+.garantia .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+}
+
+.garantia h2 {
+  text-align: center;
+  color: var(--color-blue);
+  margin-bottom: 60px;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.garantia-content {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.garantia-text {
+  padding: 50px;
+}
+
+.garantia-text h3 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #fff, var(--color-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.garantia-text > p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.garantia-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.garantia-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px;
+  background: rgba(0, 113, 227, 0.1);
+  border-radius: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.garantia-item:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 113, 227, 0.15);
+}
+
+.garantia-item i {
+  font-size: 2rem;
+  color: var(--color-blue);
+  background: rgba(0, 113, 227, 0.15);
+  padding: 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.garantia-item:hover i {
+  background: rgba(0, 113, 227, 0.25);
+  transform: scale(1.1);
+}
+
+.garantia-item-content h4 {
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.garantia-item-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.garantia-cta {
+  text-align: center;
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.garantia-destaque {
+  font-size: 1.6rem;
+  color: var(--color-blue);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.garantia-subtexto {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-garantia {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--color-blue), #0091ff);
+  color: white;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 113, 227, 0.3);
+}
+
+.btn-garantia:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 113, 227, 0.4);
+}
+
+.btn-garantia i {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .garantia {
+    padding: 60px 0;
+  }
+
+  .garantia h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+
+  .garantia-text {
+    padding: 30px;
+  }
+
+  .garantia-text h3 {
+    font-size: 1.8rem;
+  }
+
+  .garantia-features {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .garantia-item {
+    padding: 20px;
+  }
+
+  .garantia-destaque {
+    font-size: 1.4rem;
+  }
+
+  .btn-garantia {
+    width: 100%;
+    justify-content: center;
+  }
+}
