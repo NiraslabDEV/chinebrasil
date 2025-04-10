@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de 40 Fornecedores Confiáveis | China Brasil</title>
+    <link rel="icon" type="image/png" href="assets/images/logo1.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="fornecedores-styles.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="logo">
+          <img src="assets/images/logo1.png" alt="China Brasil Logo" />
+        </div>
+
+        <div class="hero-content">
+          <div class="slides-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+              <div class="question-box">
+                <h1>
+                  Você lojista, o que mudaria na sua operação se tivesse acesso
+                  a 40 fornecedores confiáveis brasileiros com entrega rápida e
+                  preços justos?
+                </h1>
+              </div>
+
+              <div class="survival-message">
+                <h2>QUEM VAI SOBREVIVER NO MERCADO?</h2>
+                <p>
+                  Apenas quem tiver os <strong>MELHORES CONTATOS</strong> e
+                  fornecedores selecionados a dedo.
+                </p>
+                <p>
+                  Com a experiência do China Edson, que há mais de 10 anos
+                  navega pelo mercado de importação, você terá acesso a uma rede
+                  exclusiva de fornecedores que farão toda diferença no seu
+                  negócio.
+                </p>
+                <p class="highlight">
+                  Enquanto seus concorrentes lutam para encontrar produtos de
+                  qualidade e preços competitivos, você terá acesso direto aos
+                  melhores fornecedores do Brasil.
+                </p>
+                <div class="quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    "No mercado atual, não importa apenas o que você vende, mas
+                    DE QUEM você compra. Os contatos certos são o novo ouro do
+                    varejo!"
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+              </div>
+
+              <div class="options">
+                <button class="option-btn" onclick="goToSlide(2)">
+                  Aumentaria minha margem de lucro
+                </button>
+                <button class="option-btn" onclick="goToSlide(2)">
+                  Melhoraria meu mix de produtos
+                </button>
+                <button class="option-btn" onclick="goToSlide(2)">
+                  Venderia mais e com menos esforço
+                </button>
+                <button class="option-btn" onclick="goToSlide(2)">
+                  Quero agora essa lista!
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+              <div class="instructor-box">
+                <div class="instructor-img">
+                  <img src="assets/images/dono3.png" alt="Edson José" />
+                </div>
+                <div class="payment-info">
+                  <h2>
+                    Para garantir sua lista dos 40 fornecedores confiáveis, siga
+                    os dados:
+                  </h2>
+                  <div class="payment-details">
+                    <p><strong>- Banco C6 S.A.</strong></p>
+                    <p><strong>Nome:</strong> EDSON JOSE SANTOS JUNIOR</p>
+                    <p><strong>PIX (celular):</strong> 11-95478-1807</p>
+                    <p><strong>Valor:</strong> R$399</p>
+                    <p class="payment-note">
+                      Após o pagamento, envie o comprovante para liberar seu
+                      acesso com prioridade.
+                    </p>
+                    <p class="limited-offer">
+                      Lembrando: válido só para os 30 primeiros!
+                    </p>
+                  </div>
+                  <button id="confirm-btn" class="cta-button pulse-effect">
+                    CONFIRMAR PAGAMENTO E RECEBER ACESSO
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="brasil-china-symbol">
+          <div class="symbol-bg"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modal do Popup de Pagamento -->
+    <div id="payment-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Dados para Pagamento</h2>
+        <div class="payment-details">
+          <p><strong>Banco:</strong> C6 S.A.</p>
+          <p><strong>Nome:</strong> EDSON JOSE SANTOS JUNIOR</p>
+          <p><strong>PIX (celular):</strong> 11-95478-1807</p>
+          <p><strong>Valor:</strong> R$399</p>
+        </div>
+        <div class="payment-instructions">
+          <p>1. Faça o pagamento usando o PIX acima</p>
+          <p>2. Clique no botão abaixo para confirmar e enviar o comprovante</p>
+          <p>3. Você receberá acesso imediato à lista de fornecedores</p>
+        </div>
+        <button id="whatsapp-btn" class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i> ENVIAR COMPROVANTE E RECEBER ACESSO
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Controle dos slides
+      function goToSlide(slideNumber) {
+        const slides = document.querySelectorAll(".slide");
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[slideNumber - 1].classList.add("active");
+      }
+
+      // Modal de pagamento
+      const modal = document.getElementById("payment-modal");
+      const confirmBtn = document.getElementById("confirm-btn");
+      const closeModal = document.querySelector(".close-modal");
+      const whatsappBtn = document.getElementById("whatsapp-btn");
+
+      confirmBtn.addEventListener("click", function () {
+        modal.style.display = "flex";
+      });
+
+      closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      // WhatsApp redirect com mensagem
+      whatsappBtn.addEventListener("click", function () {
+        const phoneNumber = "5511954781807";
+        const message =
+          "Olá! Acabei de fazer o pagamento de R$399 para ter acesso à lista dos 40 fornecedores confiáveis. Segue meu comprovante. Nome: ";
+        window.open(
+          `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+          "_blank"
+        );
+      });
+    </script>
+  </body>
+</html>

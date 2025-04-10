@@ -1,0 +1,546 @@
+:root {
+  --primary-color: #ffd700;
+  --secondary-color: #1a1a1a;
+  --text-color: #ffffff;
+  --highlight-color: #ffd700;
+  --gradient-start: #000000;
+  --gradient-end: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(
+    circle at top right,
+    rgba(255, 215, 0, 0.1),
+    transparent 60%
+  );
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 600px;
+  background: url("assets/images/arrows-bg.png") no-repeat center;
+  opacity: 0.1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.logo {
+  margin-bottom: 40px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.date-info {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-container {
+  max-width: 500px;
+}
+
+.email-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.cta-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, var(--primary-color), #ffe55c);
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: scale(1.02);
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.security-note {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Benefits Section */
+.benefits {
+  padding: 80px 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.benefits h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.benefit-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.check-icon {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* Classes Section */
+.classes {
+  padding: 80px 0;
+}
+
+.class-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.class-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 550px;
+  margin-bottom: 30px;
+}
+
+.class-card:hover {
+  transform: translateY(-5px);
+}
+
+.class-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  background: var(--secondary-color);
+  padding: 20px;
+}
+
+.class-card h3 {
+  color: var(--primary-color);
+  padding: 20px 20px 10px;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.class-card p {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  font-size: 1.1rem;
+}
+
+.class-card .date {
+  display: block;
+  padding: 20px;
+  font-size: 1rem;
+  color: var(--primary-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* About Instructor Section */
+.about-instructor {
+  padding: 80px 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.instructor-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.instructor-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.instructor-info h2 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.instructor-info p {
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "content";
+    text-align: center;
+  }
+
+  .hero-content {
+    grid-area: content;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero-image {
+    grid-area: image;
+    height: 450px;
+    margin: -20px auto 0;
+  }
+
+  .floating-arrows {
+    width: 120%;
+    left: -10%;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Ajuste das setas no mobile */
+  .arrow-up:nth-child(1) {
+    left: 10%;
+    top: 40%;
+  }
+  .arrow-up:nth-child(2) {
+    left: 20%;
+    top: 50%;
+  }
+  .arrow-up:nth-child(3) {
+    left: 30%;
+    top: 60%;
+  }
+  .arrow-up:nth-child(4) {
+    right: 30%;
+    top: 40%;
+  }
+  .arrow-up:nth-child(5) {
+    right: 20%;
+    top: 50%;
+  }
+  .arrow-up:nth-child(6) {
+    right: 10%;
+    top: 60%;
+  }
+
+  .arrow-down:nth-child(7) {
+    left: 25%;
+    top: 30%;
+  }
+  .arrow-down:nth-child(8) {
+    right: 25%;
+    top: 30%;
+  }
+
+  .logo {
+    margin: 0 auto 30px;
+  }
+
+  .form-container {
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .date-info {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 20px 0;
+  }
+
+  .hero-image {
+    height: 400px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .floating-arrows {
+    width: 140%;
+    left: -20%;
+  }
+
+  .arrow {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Hero Section com setas animadas */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-image {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.floating-arrows {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  left: -20%;
+  top: -20%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.arrow {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-right: 3px solid var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+  opacity: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+/* Setas que sobem (na lateral) */
+.arrow-up {
+  animation: floatUp 2.5s infinite;
+}
+
+.arrow-up:nth-child(1) {
+  left: 15%;
+  top: 35%;
+}
+.arrow-up:nth-child(2) {
+  left: 10%;
+  top: 45%;
+}
+.arrow-up:nth-child(3) {
+  left: 20%;
+  top: 55%;
+}
+.arrow-up:nth-child(4) {
+  right: 15%;
+  top: 35%;
+}
+.arrow-up:nth-child(5) {
+  right: 10%;
+  top: 45%;
+}
+.arrow-up:nth-child(6) {
+  right: 20%;
+  top: 55%;
+}
+
+/* Setas que descem (laterais) */
+.arrow-down {
+  animation: floatDown 2.5s infinite;
+}
+
+.arrow-down:nth-child(7) {
+  left: 25%;
+  top: 25%;
+}
+.arrow-down:nth-child(8) {
+  right: 25%;
+  top: 25%;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(15px) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-15px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(-15px) rotate(225deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(15px) rotate(225deg);
+    opacity: 0;
+  }
+}
+
+/* Efeito de brilho nas setas */
+.arrow::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.2) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+}
